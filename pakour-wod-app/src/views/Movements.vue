@@ -3,7 +3,7 @@
     <div class="view-page-container">
     <top-nav />
     <section class="button-box">
-    <button type="button" class="btn btn-warning" title="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where movement is described in detail with a link to a demo video" data-original-title="Movement-Name" aria-describedby="popover78334">Bottom</button>
+    <button type="button" class="btn btn-warning" title="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where movement is described in detail with a link to a demo video">Bottom</button>
     </section>
     <bottom-nav />
     </div>

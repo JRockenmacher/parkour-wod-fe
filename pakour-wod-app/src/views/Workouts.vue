@@ -2,13 +2,22 @@
 
 <div class='view-page-container'>
     <top-nav />
+    <section class="button-box">
     <div class="form-check">
         <label class="form-check-label">
           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-          Option one is this and that—be sure to include why it's great
+          gym/equipment needed
         </label>
+        <br>
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" checked="">
+          weights
+        </label>
+        <!-- <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option3" checked="">
+          workout target placeholder
+        </label> -->
     </div>
-    <section class="button-box">
         <button type="button" class="btn btn-warning">Favorites</button>
         <button type="button" class="btn btn-warning">Warmup</button>
         <button type="button" class="btn btn-warning">Skill/Strength</button>
@@ -58,5 +67,8 @@ components: {
   .btn-warning {
       width: 90%;
   }
-      
+    .form-check {
+        background: rgba(255,255,255,0.8);
+        padding: 5%,5%,5%,5%;
+    }
 </style>

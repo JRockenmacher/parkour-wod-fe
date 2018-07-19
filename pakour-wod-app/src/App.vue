@@ -9,14 +9,10 @@
 </template>
 
 <script>
-// import TopNav from '@/components/TopNav.vue'
-// import BottomNav from '@/components/BottomNav.vue'
+
 
 export default {
-  // components: {
-  //   TopNav,
-  //   BottomNav
-  // }
+  
 }
 </script>
 
@@ -30,20 +26,16 @@ export default {
     
     margin-top: 5vh;
     margin-bottom: 5vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     /* display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 5% 5% 5% 5%; */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     
   }
-  /* @media (max-width: 420px) {
-      #app {
-          
-      }
-  }  */
+  
 </style>
