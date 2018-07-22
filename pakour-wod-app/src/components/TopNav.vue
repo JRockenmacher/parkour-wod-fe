@@ -1,6 +1,6 @@
 <template>
     
-        <nav class="header navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="right-nav">
                 <!-- <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -23,7 +23,7 @@ export default {
     methods: {
         goToInfo(){
             console.log('info button clicked');
-            // this.$router.push({path:'info'})
+            this.$router.push({path:'info'})
         }
     }
 }
@@ -33,11 +33,13 @@ export default {
         display: flex;
         justify-content: space-between;
         flex-wrap: nowrap;
+        z-index: 200;
             
     }
-    .header {
+    /* .header {
+        
         position: fixed;
         top: 0;
-        width: 100%;
-    }
+        width: 100%; 
+     }  */
 </style>

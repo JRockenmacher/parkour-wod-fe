@@ -1,13 +1,24 @@
 <template>
-<main>
+<div>
     <div class="view-page-container">
     <top-nav />
     <section class="button-box">
-    <button type="button" class="btn btn-warning" title="" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where movement is described in detail with a link to a demo video">Bottom</button>
+    
+    <b-button @click="showModal">
+      Movement Name
+    </b-button>
+    <b-modal ref="myModalRef" hide-footer title="link to movement: display movement name">
+      <div class="d-block text-center">
+        <p strong>counter</p>
+        <script
+      </div>
+      <b-btn class="mt-3" variant="warning" block @click="genNewWOD">New WOD</b-btn>
+    </b-modal>
+  
     </section>
     <bottom-nav />
     </div>
-</main>
+</div>
 </template>
 
 <script>
@@ -18,26 +29,44 @@ export default {
 components: {
     TopNav,
     BottomNav
+  },
+  methods: {
+      genNewWOD() {
+          console.log('generating...');
+          
+      }
   }
 }
 </script>
 
-<style>
+<style scoped>
     .view-page-container {
-        height: 100%;
-        position: center;
-}    
-    .button-box {
-        position: absolute;
+        height: 100vh;
         width: 100%;
-        height: 90%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 10% 5% 10% 5%;
-  }
-  .btn-warning {
+        justify-content: center;
+        align-items: center
+        /* position: absolute */
+        
+}    
+    .button-box {
+       
+        text-align: center;
+        width: 100%;
+        height: calc(100vh - 112px);
+        display: inline-block;
+        padding: 0;
+        z-index: 100;   
+        overflow-y: scroll;
+        
+
+    }
+
+  .button-box button {
+      min-height: 30px;
       width: 90%;
+      margin: 8px;
   }
+
 </style>

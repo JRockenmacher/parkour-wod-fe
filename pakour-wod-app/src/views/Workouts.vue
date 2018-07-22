@@ -4,15 +4,13 @@
     <top-nav />
     <section class="button-box">
     <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-          gym/equipment needed
-        </label>
-        <br>
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" checked="">
-          weights
-        </label>
+        <h3>Modifiers</h3>
+        <b-form-group>
+            <b-form-checkbox-group id="checkboxes2" name="modifiers">
+                <b-form-checkbox @change='this.saveWeight' v-model="weights" value="weights">Weights</b-form-checkbox>
+                <b-form-checkbox @change='saveEquip' v-model="equipment" value="equip">Equipment</b-form-checkbox>
+            </b-form-checkbox-group>
+        </b-form-group>
         <!-- <label class="form-check-label">
           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option3" checked="">
           workout target placeholder
@@ -26,6 +24,7 @@
         <button type="button" class="btn btn-warning">Benchmark</button>
         <button type="button" class="btn btn-warning">Partner</button>
         <button type="button" class="btn btn-warning">Mobility</button>
+        
     </section>
     <bottom-nav />
 </div>
@@ -39,10 +38,32 @@ import BottomNav from '@/components/BottomNav.vue'
 
 
 export default {
-components: {
-    TopNav,
-    BottomNav
+    components: {
+        TopNav,
+        BottomNav
+  },
+    data() {
+        return {
+            weights: false,
+            equipment: false,
+      }
+  },
+
+    mounted() {
+        this.weights = localStorage.getItem('weights') != 'null'? true : false
+        this.equipment = localStorage.getItem('equipment') != 'null' ? true : false
+
+  },
+
+  methods: {
+      saveWeight(e) {
+        localStorage.setItem("weights", e)          
+      },
+      saveEquip(e) {
+        localStorage.setItem("equipment", e)          
+      }
   }
+
 }
 </script>
 
@@ -63,12 +84,22 @@ components: {
     justify-content: space-around;
     align-items: center;
     padding: 10% 5% 10% 5%;
-  }
-  .btn-warning {
-      width: 90%;
-  }
-    .form-check {
-        background: rgba(255,255,255,0.8);
-        padding: 5%,5%,5%,5%;
+}
+.button-box button {
+    min-height: 30px;
+    width: 90%;
+    margin: 8px;
+}
+.form-check {
+    background: rgba(255,255,255,0.8);
+    width: inherit;
+    text-align: center;
+    border-radius: .25rem; 
+    margin-top: 5px;   
+}
+@media (max-width:420px){
+    .form-check{
+        margin-top: 2vh;
     }
+}
 </style>

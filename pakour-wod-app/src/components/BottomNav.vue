@@ -1,5 +1,5 @@
 <template>
-    <nav class="footer navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="footer navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
         <button type="button" class="btn btn-info" 
         @click.prevent="goToWods">
         WODs
@@ -31,9 +31,5 @@ export default {
 
 
 <style>
-    .footer {
-    position:fixed;
-    bottom:0;
-    width:100%;
-    }
+  
 </style>
