@@ -3,15 +3,18 @@
         <top-nav />
         <section class="info-page-box">
         <h1>Info Page</h1>
-        <b-button @click="showForm">
+        <!-- <b-button @click="showForm">
             Submit A WOD
-        </b-button>
-        <b-button @click="showForm">
+        </b-button> -->
+        <w-o-d-form />
+        <!-- <b-button @click="showForm">
             Submit A Movement
-        </b-button>
-        <b-button @click="showForm">
+        </b-button> -->
+        <movement-form />
+        <!-- <b-button>
             Contact Us
-        </b-button>
+        </b-button> -->
+        <contact-form />
         <div class="change-log">
             <h3>Recent Updates/ Changelog</h3>
             <p>Updates to app go here</p>
@@ -40,13 +43,30 @@ import TopNav  from "@/components/TopNav.vue";
 import  BottomNav from "@/components/BottomNav.vue";
 import WODForm from "@/components/WODForm";
 import MovementForm from "@/components/MovementForm";
+import ContactForm from "@/components/ContactForm";
+// import WODAPI from "@/lib/WODAPI";
+// import MovementAPI from "@/lib/MovementAPI";
 
 export default {
 components: {
     TopNav,
     BottomNav,
     WODForm,
-    MovementForm
+    MovementForm,
+    ContactForm
+  },
+  data: () => ({
+      movements: [],
+      wods: [],
+      
+  }),
+  methods: {
+      addMovement(movement) {
+          this.movements.push(movement)
+      },
+      addWOD(wod) {
+          this.wods.push(wod)
+      }
   }
 }
 </script>
