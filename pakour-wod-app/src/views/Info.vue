@@ -3,17 +3,11 @@
         <top-nav />
         <section class="info-page-box">
         <h1>Info Page</h1>
-        <!-- <b-button @click="showForm">
-            Submit A WOD
-        </b-button> -->
+      
         <w-o-d-form />
-        <!-- <b-button @click="showForm">
-            Submit A Movement
-        </b-button> -->
+       
         <movement-form />
-        <!-- <b-button>
-            Contact Us
-        </b-button> -->
+      
         <contact-form />
         <div class="change-log">
             <h3>Recent Updates/ Changelog</h3>
@@ -89,7 +83,7 @@ components: {
         padding: 0;
         z-index: 100;   
         overflow-y: scroll;
-        background-color: rgba(255, 255, 255, 0.7)
+        background-color: rgba(255, 255, 255, 0.8)
     }
 
     .disclaimer {

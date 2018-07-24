@@ -1,5 +1,5 @@
-const WOD_API_URL = ''
-const Movement_API_URL = '' 
+const WOD_API_URL = 'https://parkour-wod.herokuapp.com/workouts'
+const Movement_API_URL = 'https://parkour-wod.herokuapp.com/movements' 
 
 export default {
     async getWODs() {

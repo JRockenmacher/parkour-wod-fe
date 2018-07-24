@@ -25,6 +25,19 @@
         <button type="button" class="btn btn-warning">Partner</button>
         <button type="button" class="btn btn-warning">Mobility</button>
         
+        <b-modal ref="myModalRef" hide-footer :title="workout.type">
+            <div class="d-block text-center">
+                <h3>{{workout.name}}</h3>
+                <p strong>{{workout.timing}}</p>
+                <p class="workout-description">{{workout.description}}</p>
+            </div>
+            <b-btn class="mt-3" 
+            variant="warning" 
+            @click="genNewWODOfType">
+            New WOD
+            </b-btn>
+        </b-modal>
+
     </section>
     <bottom-nav />
 </div>
@@ -38,33 +51,45 @@ import BottomNav from '@/components/BottomNav.vue'
 
 
 export default {
+    name: "workouts",
     components: {
         TopNav,
         BottomNav
-  },
-    data() {
-        return {
-            weights: false,
-            equipment: false,
-      }
+    },
+    data: () => ({
+        workouts: [],
+        // return {
+        //     weights: false,
+        //     equipment: false,
+        // }
+      }),
+        async mounted() {
+            this.workouts = await API.getWODs()
+        },
+        mounted() {
+            this.weights = localStorage.getItem('weights') != 'null'? true : false
+            this.equipment = localStorage.getItem('equipment') != 'null' ? true : false
+
   },
 
-    mounted() {
-        this.weights = localStorage.getItem('weights') != 'null'? true : false
-        this.equipment = localStorage.getItem('equipment') != 'null' ? true : false
-
-  },
-
-  methods: {
-      saveWeight(e) {
-        localStorage.setItem("weights", e)          
-      },
-      saveEquip(e) {
-        localStorage.setItem("equipment", e)          
-      }
+    methods: {
+        saveWeight(e) {
+            localStorage.setItem("weights", e)          
+        },
+        saveEquip(e) {
+            localStorage.setItem("equipment", e)          
+        },
+        genNewWODOfType () {
+            this.API.getWODs
+            .then(res.filter("workout.type"))
+            .then(Math.random(res))
+            .then(console.log(res)
+            )
+        }
+    }
   }
 
-}
+
 </script>
 
 

@@ -8,46 +8,9 @@
     <div class="view-page-container">
         <top-nav />
         <section class="button-box">
-    
-        <b-button variant="warning" @click="showModal">
-            Movement Name
-        </b-button>
-        <b-modal ref="myModalRef" hide-footer title="link to movement: display movement name">
-        <div class="d-block text-center">
-            <p strong>counter</p>
-        </div>
-        <b-btn class="mt-3" variant="warning" block @click="genNewWOD">New WOD</b-btn>
-        </b-modal>
-
-        <b-button variant="warning" @click="showModal">
-            Movement Name
-        </b-button>
-        <b-modal ref="myModalRef" hide-footer title="link to movement: display movement name">
-        <div class="d-block text-center">
-            <p strong>counter</p>
-        </div>
-        <b-btn class="mt-3" variant="warning" block @click="genNewWOD">New WOD</b-btn>
-        </b-modal>
-
-        <b-button variant="warning" @click="showModal">
-            Movement Name
-        </b-button>
-        <b-modal ref="myModalRef" hide-footer title="link to movement: display movement name">
-        <div class="d-block text-center">
-            <p strong>counter</p>
-        </div>
-        <b-btn class="mt-3" variant="warning" block @click="genNewWOD">New WOD</b-btn>
-        </b-modal>
-
-        <b-button variant="warning" @click="showModal">
-            Movement Name
-        </b-button>
-        <b-modal ref="myModalRef" hide-footer title="link to movement: display movement name">
-        <div class="d-block text-center">
-            <p strong>counter</p>
-        </div>
-        <b-btn class="mt-3" variant="warning" block @click="genNewWOD">New WOD</b-btn>
-        </b-modal>
+            <movement-list 
+            :movements="movements"
+            />
   
     </section>
     <bottom-nav />
@@ -58,7 +21,8 @@
 <script>
 import TopNav from '@/components/TopNav.vue'
 import BottomNav from '@/components/BottomNav.vue'
-// import Movement from '@/components/Movement.vue'
+import MovementList from '@/components/MovementList.vue'
+import API from '@/lib/API.js'
 
 export default {
 name: 'movemements',
@@ -66,14 +30,18 @@ name: 'movemements',
 components: {
     TopNav,
     BottomNav,
+    MovementList
     // Movement
   },
-//   methods: {
-//       genNewWOD() {
-//           console.log('generating...');
-          
-//       }
-//   }
+  data: () => ({
+      movements: [],
+  }),
+async mounted() {
+    this.movements = await API.getMovements()
+},
+  methods: {
+      
+  }
 }
 </script>
 
