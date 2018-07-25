@@ -4,8 +4,7 @@
         @click="showForm = !showForm" 
         type="button" 
         class=""
-        variant="warning"
-        >
+        variant="warning">
         Submit A WOD
         </b-button>
         <b-form 

@@ -21,3 +21,6 @@
     </div>
 </div>
 ```
+
+// https://media.giphy.com/media/5qFE8x8hnKKPMGpwgM/giphy.gif
+Find a ledge/box at a height you are comfortable jumping up to (start with 12") From the ground, bend into the hips, knees, and ankles tensing the leg muscles. Swing/ punch the hands upward as you explode through your legs, fully extending them. Snap knees up to clear the box and try to land silently. Step off the box/ ledge and repeat 

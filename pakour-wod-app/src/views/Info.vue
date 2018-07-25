@@ -6,7 +6,9 @@
       
         <w-o-d-form />
        
-        <movement-form />
+        <movement-form 
+        :addMovement="addMovement"
+        />
       
         <contact-form />
         <div class="change-log">
@@ -55,12 +57,30 @@ components: {
       
   }),
   methods: {
-      addMovement(movement) {
-          this.movements.push(movement)
+    addMovement(movement) {
+        this.movements.push(movement)
+        const data = new FormData({
+            movements
+        })
+        const Movement_API_URL = 'https://parkour-wod.herokuapp.com/movements'
+            fetch(Movement_API_URL, {
+            method: 'POST',
+            body: data
+            //can put the new FormData object and key: value pairs here
+            })
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(data) {
+                console.log('RESULT', data)
+            })
+            .catch(function(error) {
+                console.log('error:', error.message);
+            });
       },
-      addWOD(wod) {
-          this.wods.push(wod)
-      }
+    //   addWOD(wod) {
+    //       this.wods.push(wod)
+    //   }
   }
 }
 </script>

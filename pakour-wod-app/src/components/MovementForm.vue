@@ -16,7 +16,7 @@
             <label for="description">Description</label>
             <textarea v-model="movement.description" name="description" id="description" cols="15" rows="5" class="form-control"></textarea>
             <label for="demo">Demo url</label>
-            <input v-model="movement.demo" type="text" name="demo" id="demo" class="form-control">
+            <input v-model="movement.demo" type="text" name="demo" id="demo" class="form-control" placeholder="paste gif image link here">
             <label for="skill">Skill Level</label>
             <b-form-select v-model="movement.skill" name="skill" id="skill" class="form-control">
                 <option disabled value="">Select One</option>
@@ -27,12 +27,10 @@
             <br>
             <b-form-checkbox v-model="movement.weights" >
                 <label for="weights">Weights Needed</label>
-                <!-- <input v-model="movement.weights" type="checkbox" name="weights" id="weights" > -->
             </b-form-checkbox>
             <br>
             <b-form-checkbox v-model="movement.equipment" >
                 <label for="equpment">Equipment Needed</label>
-                <!-- <input v-model="movement.equipment" type="checkbox" name="equipment" id="equipment" > -->
             </b-form-checkbox>
         </div>
         <b-button 
@@ -65,8 +63,8 @@ export default {
         }),
     methods: {
         onAddMovement() {
-            // this.addMovement(this.movement)
-            // this.movement = getEmptyMovement()
+            this.addMovement(this.movement)
+            this.movement = getEmptyMovement()
             getEmptyMovement()
             this.showForm = false
         }
