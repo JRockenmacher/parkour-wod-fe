@@ -18,7 +18,7 @@
             <label for="demo">Demo url</label>
             <input v-model="movement.demo" type="text" name="demo" id="demo" class="form-control" placeholder="paste gif image link here">
             <label for="skill">Skill Level</label>
-            <b-form-select v-model="movement.skill" name="skill" id="skill" class="form-control">
+            <b-form-select v-model="movement.skill_level" name="skill" id="skill" class="form-control">
                 <option disabled value="">Select One</option>
                 <option>Beginner</option>
                 <option>Intermediate</option>
@@ -49,7 +49,7 @@ function getEmptyMovement() {
         name: "",
         description: "",
         demo: "",
-        skill: "",
+        skill_level: "",
         weights: false,
         equipment: false
     }

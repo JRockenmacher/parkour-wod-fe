@@ -19,10 +19,11 @@
         <div class="disclaimer">
             <p>
             As with all fitness programs, please consult with your doctor to see if this app is right for you. 
-            Movements even at a beginner level can be challenging and difficult. 
+            Movements even at a beginner level can be challenging and dangerous. 
             YOU are responsible for your training. Parkour Wod Gen will not be held responsible or liable for any actions 
             taken by anyone during their performance of the WODs or parkour movements prescribed in this app.
-            PLEASE NOTE THAT PARKOUR IS DANGEROUS. Be mindful of the risks. 
+            PLEASE NOTE THAT PARKOUR IS DANGEROUS. Be mindful of the risks.
+            This is not a substitute for formal instruction by a qualilifed professional instructor.
             </p>
         </div>
         <div class="footer-info">
@@ -59,12 +60,14 @@ components: {
   methods: {
     addMovement(movement) {
         this.movements.push(movement)
-        const data = new FormData({
-            movements
-        })
+        const data = JSON.stringify(this.movements[0])
         const Movement_API_URL = 'https://parkour-wod.herokuapp.com/movements'
             fetch(Movement_API_URL, {
             method: 'POST',
+            headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            // "Content-Type": "application/x-www-form-urlencoded",
+            },
             body: data
             //can put the new FormData object and key: value pairs here
             })

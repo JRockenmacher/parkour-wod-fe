@@ -15,6 +15,7 @@
             hide-footer
             hide-header
             centered title=""
+            class= "text-center"
             >
             <h5>Burpee Exorcist</h5>
             <p strong>Skill Level: intermediate<p>
@@ -23,7 +24,7 @@
             <b-btn 
             @click="this.hideModal"
             variant="secondary">
-            Back WODs
+            Back To WODs
             </b-btn>
             <b-btn class="mt-3" 
             variant="warning" 

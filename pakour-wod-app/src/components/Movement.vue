@@ -33,9 +33,9 @@
 export default {
     name: "movement",
     props: ['movement'],
-    data: () => {
+    data: () => ({
         
-        },
+        }),
     methods: {
         showModal () {
         this.$refs.moveModal.show()
