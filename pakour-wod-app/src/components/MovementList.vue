@@ -1,8 +1,9 @@
 <template>
-    <section class="row">
+    <section>
         <movement 
         v-for="movement in movements"
         :movement="movement"
+        :key="movement.id"
         />
     </section>
 </template>
@@ -15,7 +16,8 @@ export default {
     props: ['movements'],
     components: {
         Movement
-    }
+    },
+        
 }
 </script>
 

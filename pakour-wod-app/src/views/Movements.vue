@@ -22,11 +22,11 @@
 import TopNav from '@/components/TopNav.vue'
 import BottomNav from '@/components/BottomNav.vue'
 import MovementList from '@/components/MovementList.vue'
-import API from '@/lib/API.js'
+// import API from '@/lib/API.js'
 
 export default {
 name: 'movemements',
-// props: ['movements, removeMovement']
+// props: ['movements'],
 components: {
     TopNav,
     BottomNav,
@@ -34,13 +34,24 @@ components: {
     // Movement
   },
   data: () => ({
-      movements: [],
+          movements: [],
   }),
-async mounted() {
-    this.movements = await API.getMovements()
-},
+// async mounted() {
+//     this.movements = await API.getMovements()
+// },
+    mounted() {
+        const Movement_API_URL = 'https://parkour-wod.herokuapp.com/movements'
+        return fetch(Movement_API_URL)
+            .then(res => res.json())
+            .then( (res) => {
+                this.movements.push(res)
+                // this.movements = res
+                this.movements = this.movements[0].movements
+                console.log(this.movements);                      
+            })
+    },
   methods: {
-      
+    // getMovements() {
   }
 }
 </script>
