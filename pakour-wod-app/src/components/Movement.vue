@@ -35,7 +35,7 @@ export default {
     props: ['movement'],
     data: () => {
         
-    },
+        },
     methods: {
         showModal () {
         this.$refs.moveModal.show()

@@ -19,24 +19,14 @@
         <button type="button" class="btn btn-warning">Favorites</button>
         <button type="button" class="btn btn-warning">Warmup</button>
         <button type="button" class="btn btn-warning">Skill/Strength</button>
-        <button type="button" class="btn btn-warning">Power</button>
+        <!-- <button type="button" class="btn btn-warning">Power</button> -->
+        <power-modal />
         <button type="button" class="btn btn-warning">Endurance</button>
         <button type="button" class="btn btn-warning">Benchmark</button>
         <button type="button" class="btn btn-warning">Partner</button>
         <button type="button" class="btn btn-warning">Mobility</button>
         
-        <b-modal ref="myModalRef" hide-footer :title="workout.type">
-            <div class="d-block text-center">
-                <h3>{{workout.name}}</h3>
-                <p strong>{{workout.timing}}</p>
-                <p class="workout-description">{{workout.description}}</p>
-            </div>
-            <b-btn class="mt-3" 
-            variant="warning" 
-            @click="genNewWODOfType">
-            New WOD
-            </b-btn>
-        </b-modal>
+        
 
     </section>
     <bottom-nav />
@@ -48,13 +38,14 @@
 <script>
 import TopNav from '@/components/TopNav.vue'
 import BottomNav from '@/components/BottomNav.vue'
-
+import PowerModal from '@/components/PowerModal.vue'
 
 export default {
     name: "workouts",
     components: {
         TopNav,
-        BottomNav
+        BottomNav,
+        PowerModal
     },
     data: () => ({
         workouts: [],
@@ -63,9 +54,9 @@ export default {
         //     equipment: false,
         // }
       }),
-        async mounted() {
-            this.workouts = await API.getWODs()
-        },
+        // async mounted() {
+        //     this.workouts = await API.getWODs()
+        // },
         mounted() {
             this.weights = localStorage.getItem('weights') != 'null'? true : false
             this.equipment = localStorage.getItem('equipment') != 'null' ? true : false
