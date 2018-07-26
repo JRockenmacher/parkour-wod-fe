@@ -16,16 +16,17 @@
           workout target placeholder
         </label> -->
     </div>
+    <div class="container">
         <button type="button" class="btn btn-warning">Favorites</button>
         <button type="button" class="btn btn-warning">Warmup</button>
         <button type="button" class="btn btn-warning">Skill/Strength</button>
         <!-- <button type="button" class="btn btn-warning">Power</button> -->
-        <power-modal />
+        <power-modal/>
         <button type="button" class="btn btn-warning">Endurance</button>
         <button type="button" class="btn btn-warning">Benchmark</button>
         <button type="button" class="btn btn-warning">Partner</button>
         <button type="button" class="btn btn-warning">Mobility</button>
-        
+    </div>
         
 
     </section>

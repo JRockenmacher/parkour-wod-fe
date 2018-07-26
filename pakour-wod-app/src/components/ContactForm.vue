@@ -5,7 +5,7 @@
         type="button" 
         class=""
         variant="primary">
-        Contact US
+        Contact Us
         </b-button>
         <b-form
         v-if="showForm"
@@ -15,10 +15,10 @@
                 <input type="text" name="email" id="email" class="form-control">
                 <label for="message">Message</label>
                 <textarea type="text" name="message" id="message" cols="15" rows="5" class="form-control"></textarea>
-                <br>
-                <b-form-checkbox>
+                <!-- <br> -->
+                <!-- <b-form-checkbox>
                 <label for="bot">Not A Bot</label>
-                </b-form-checkbox>
+                </b-form-checkbox> -->
             </div>
             <b-button
             type="submit"

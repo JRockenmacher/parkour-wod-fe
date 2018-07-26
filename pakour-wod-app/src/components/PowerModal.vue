@@ -2,6 +2,7 @@
     <section class="container">
         <b-btn
         @click="this.showModal"
+        class="btn btn-warning"
         variant="warning">
         Power WODs
         </b-btn>
@@ -54,6 +55,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+ .container {
+     padding: 0
+ }
 </style>
