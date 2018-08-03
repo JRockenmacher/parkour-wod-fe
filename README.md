@@ -6,8 +6,8 @@ Project members include:
 
 [Tim](https://github.com/yhtomitim) . 
 [Garth]() . 
-[Kaitlyn]() . 
-[Garth]() . 
+[Kaitlyn](https://github.com/kaitlinramirez) . 
+[Keith](https://github.com/joneskc) . 
 and myself!  
 
 
