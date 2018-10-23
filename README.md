@@ -13,3 +13,5 @@ then spool up Vue dev view with:
 ``` 
 npm run serve
 ```
+### Hosted URL 
+[firebase deployed site](https://parkour-wod.firebaseapp.com)
