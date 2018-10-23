@@ -14,3 +14,8 @@ npm run serve
 ```
 npm run build
 ```
+
+### hosted site url
+```
+https://parkour-wod.firebaseapp.com
+```

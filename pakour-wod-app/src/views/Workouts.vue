@@ -95,12 +95,12 @@ export default {
 .button-box {
     position: absolute;
     width: 100%;
-    height: 90%;
+    height: 83%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 10% 5% 10% 5%;
+    margin-bottom: 10%
 }
 .button-box button {
     min-height: 30px;
@@ -112,11 +112,7 @@ export default {
     width: inherit;
     text-align: center;
     border-radius: .25rem; 
-    margin-top: 5px;   
 }
-@media (max-width:420px){
-    .form-check{
-        margin-top: 2vh;
-    }
-}
+
+
 </style>
